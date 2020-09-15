@@ -1,0 +1,40 @@
+.top_{
+  margin-top: 10%;
+}
+.top_2{
+  margin-top:2%;
+}
+.top_trois{
+  margin-top:15%;
+}
+.bottom_{
+  margin-bottom: 5%;
+}
+
+.menu{
+  height: 80px;
+  line-height: 80px;
+}
+.right_{
+  float: right;
+  margin-right: 5px;
+  font-size: 18px;
+}
+.left_{
+  float: left;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.choix{
+  height: 12.5rem;
+  line-height: 2.5rem;
+    width: 100%;
+}
+.choix1{
+  width: 90%;
+  margin-left: 5%;
+}
+.img-profile{
+  height: 5rem;
+  width: 25%;
+}
