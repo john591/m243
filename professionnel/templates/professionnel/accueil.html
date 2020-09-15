@@ -1,0 +1,37 @@
+{% extends "professionnel/base.html" %}
+
+{% load static %}
+{% block title %}
+  Accueil
+{% endblock %}
+
+{% block body %}
+  <div class="container-fluid">
+    <div class="row">
+      <!--- div menu --->
+      <div class="col-lg-12 menu bg-light border fixed-top">
+        <a href="{% url 'accueil' %}"><img src="{% static 'img/logoOK.jpg' %}" alt="..."></a>
+        <span class="right_"> <a href="{% url 'logout' %}">  Deconnexion</a></span><span class="right_">Salut, {{request.user}} </span>
+      </div><br><br>
+    </div>
+    <div class="choix1 text-center">
+      <div class="row">
+        <!--- div choix ---><br><br>
+        <div class="col-lg-12 top_trois">
+          <div class="row">
+            <div class="col-lg-3"></div>
+            <a href="#" class="col-lg-3 choix text-center hvr-shrink bg-warning border bg-white shadow-sm p-3 mb-5 rounded"><br>
+                <i class="fas fa-user ok"></i><br>
+                <span>Modifier votre profil</span><br>
+            </a>
+            <a href="{% url 'find' %}" class="col-lg-3 bg-success hvr-shrink choix text-center border bg-white shadow-sm p-3 mb-5 rounded"><br>
+                <i class="fas fa-user-tie ok"></i><br>
+                <span>Trouver un professionnel</span>
+            </a>
+            <div class="col-lg-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

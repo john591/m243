@@ -1,0 +1,70 @@
+{% extends "professionnel/base.html" %}
+
+{% load static %}
+{% block title %}
+  Trouver un professionnel | Creation de compte
+{% endblock %}
+
+{% block body %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 top_2" style="">
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4 text-center border shadow-lg p-3 bg-white rounded">
+            <img src="{% static 'img/logo1OK.jpg' %}" alt="...">
+            <h4 class="text-center"><strong>Créez votre compte</strong></h4>
+            {% if form.errors %}
+              <label class="alert alert-danger text-center">{{form.errors}}</label>
+            {% endif %}
+            <form class="" action="" method="post">
+              {% csrf_token %}
+              {{form.username}}
+              {{form.first_name}}
+              {{form.last_name}}
+              {{form.email}}
+              {{profil_form.commune}}
+              {{profil_form.quartier}}
+              {{profil_form.rue}}
+              {{profil_form.telephone}}
+              {{form.password1}}
+              {{form.password2}}<br>
+              <h6 class="text-center text-muted">Profession</h6>
+              {{profil_form.profession}}<br><br>
+
+              <p class=" text-center"><input class="btn btn-outline-primary" type="submit" name="Creer" value="créez votre compte"></p>
+            </form>
+            <small id="emailHelp" class="form-text text-muted">
+              Vous avez deja un compte ?<a href="{% url 'home' %}"> se connecter</a>
+            </small><br>
+          </div>
+          <div class="col-lg-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder='Nom utilisateur...';
+    form_fields[2].placeholder='Prenom...';
+    form_fields[3].placeholder='Nom...';
+    form_fields[4].placeholder='Adresse mail ...';
+    form_fields[5].placeholder='Votre commune...';
+    form_fields[6].placeholder='Votre quartier...';
+    form_fields[7].placeholder='N°, Avenue ...';
+    form_fields[8].placeholder='Telephone ...';
+    form_fields[9].placeholder='Mot de passe ...';
+    form_fields[10].placeholder='Confirmer mot de passe ...';
+
+     form_fields[1].className += 'form-control';
+     form_fields[2].className += 'form-control';
+     form_fields[3].className += 'form-control';
+     form_fields[4].className += 'form-control';
+     form_fields[5].className += 'form-control';
+     form_fields[6].className += 'form-control';
+     form_fields[7].className += 'form-control';
+     form_fields[8].className += 'form-control';
+     form_fields[9].className += 'form-control';
+     form_fields[10].className += 'form-control';
+  </script>
+{% endblock %}
